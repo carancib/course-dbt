@@ -1,0 +1,59 @@
+
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Staging table for Orders"
+    columns:
+      - name: order_id
+        description: "ID of the order"
+        tests:
+          - not_null
+
+  - name: stg_addresses
+    description: "Staging table for Adresses"
+    columns:
+      - name: address_id
+        description: "ID of the address"
+        tests:
+          - not_null
+
+  - name: stg_events
+    description: "Staging table for events"
+    columns:
+      - name: event_id
+        description: "ID of the event"
+        tests:
+          - not_null
+
+  - name: stg_order_items
+    description: "Staging table for Order Items"
+    columns:
+      - name: order_id
+        description: "ID of the order"
+        tests:
+          - not_null
+
+  - name: stg_products
+    description: "Staging table for products"
+    columns:
+      - name: product_id
+        description: "ID of the product"
+        tests:
+          - not_null
+
+  - name: stg_promos
+    description: "Staging table for promos"
+    columns:
+      - name: promo_id
+        description: "ID of the promo"
+        tests:
+          - not_null
+  
+  - name: stg_users
+    description: "Staging table for users"
+    columns:
+      - name: user_id
+        description: "ID of the user"
+        tests:
+          - not_null
