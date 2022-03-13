@@ -9,6 +9,28 @@ models:
         description: "ID of the order"
         tests:
           - not_null
+      - name: promo_id
+        description: "ID of the promo associated with this order"
+      - name: user_id
+        description: "ID of the user associated with this order"
+      - name: address_id
+        description: "ID of the address associated with this order"
+      - name: created_at
+        description: "order creation date"
+      - name: order_cost
+        description: "total order cost"
+      - name: shipping_cost
+        description: "order shipping cost"
+      - name: tracking_id
+        description: "id for tracking"
+      - name: shipping_service
+        description: "shipping type"
+      - name: estimated_delivery_ay
+        description: "estimated delivery date"
+      - name: delivered_at
+        description: "real delivered date"
+      - name: status
+        description: "order status"
 
   - name: stg_addresses
     description: "Staging table for Adresses"
@@ -17,6 +39,14 @@ models:
         description: "ID of the address"
         tests:
           - not_null
+      - name: address
+        description: "user address"
+      - name: zipcode
+        description: "zipcode of the address"
+      - name: state
+        description: "state of the address"
+      - name: country
+        description: "country of the address"
 
   - name: stg_events
     description: "Staging table for events"
@@ -25,6 +55,21 @@ models:
         description: "ID of the event"
         tests:
           - not_null
+      - name: session_id
+        description: "ID of the session"
+      - name: user_id
+        description: "ID of the user"
+      - name: event_type
+        description: "type of event"
+      - name: page_url
+        description: "url where the event occurs"
+      - name: created_at
+        description: "date of event"
+      - name: order_id
+        description: "order associated with the event"
+      - name: product_id
+        description: "product associated with the event"
+
 
   - name: stg_order_items
     description: "Staging table for Order Items"
@@ -33,6 +78,11 @@ models:
         description: "ID of the order"
         tests:
           - not_null
+      - name: product_id
+        description: "ID of the product in the order"
+      - name: quantity
+        description: "quantity of the product in the order"
+
 
   - name: stg_products
     description: "Staging table for products"
@@ -41,6 +91,13 @@ models:
         description: "ID of the product"
         tests:
           - not_null
+      - name: name
+        description: "name of the product"
+      - name: price
+        description: "price of the product"
+      - name: inventory
+        description: "inventory of the product"
+
 
   - name: stg_promos
     description: "Staging table for promos"
@@ -49,6 +106,10 @@ models:
         description: "ID of the promo"
         tests:
           - not_null
+      - name: discount
+        description: "discount amount"
+      - name: status
+        description: "promo status"
   
   - name: stg_users
     description: "Staging table for users"
@@ -57,3 +118,17 @@ models:
         description: "ID of the user"
         tests:
           - not_null
+      - name: first_name
+        description: "first name of the user"
+      - name: last_name
+        description: "last name of the user"
+      - name: email
+        description: "email of the user"
+      - name: phone_number
+        description: "phone number of the user"
+      - name: created_at
+        description: "date of user creation"
+      - name: updated_At
+        description: "date of last updated information"
+      - name: address_id
+        description: "ID of the user address"
