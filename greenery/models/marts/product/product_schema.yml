@@ -1,0 +1,30 @@
+
+version: 2
+
+models:
+  - name: fact_page_views
+    description: "Fact table for all page views recorded"
+    columns:
+      - name: event_id
+        description: "ID of the event"
+        tests:
+          - not_null
+      - name: session_id
+        description: "ID of the session"
+        tests:
+          - not_null
+      - name: user_id
+        description: "ID of the user"
+      - name: event_type
+        description: "type of event"
+        tests:
+          - accepted_values:
+              values: ['checkout', 'page_view', 'add_to_cart', 'package_shipped']
+      - name: page_url
+        description: "url where the event occurs"
+      - name: created_at
+        description: "date of event"
+      - name: order_id
+        description: "order associated with the event"
+      - name: product_id
+        description: "product associated with the event"

@@ -1,0 +1,27 @@
+
+version: 2
+
+models:
+  - name: fact_user_order_activity
+    description: "Fact table for a user activity summary containing total spent, amount of orders and recency of purchase"
+    columns:
+      - name: user_id
+        description: "ID of the user"
+        tests:
+          - not_null
+      - name: total_spend
+        description: "total amount spent by user"
+        tests:
+          - not_null
+      - name: order_count
+        description: "amount of orders made by user"
+        tests:
+          - not_null
+      - name: last_order_date
+        description: "last date where the user ordered"
+        tests:
+          - not_null
+      - name: days_since_last_order
+        description: "amount of time since the user last ordered"
+        tests:
+          - not_null

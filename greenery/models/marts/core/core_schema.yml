@@ -1,0 +1,80 @@
+
+version: 2
+
+models:
+  - name: fact_orders
+    description: "Fact table for Orders"
+    columns:
+      - name: order_id
+        description: "ID of the order"
+        tests:
+          - not_null
+          - unique
+      - name: promo_id
+        description: "ID of the promo associated with this order"
+      - name: user_id
+        description: "ID of the user associated with this order"
+        tests:
+          - not_null
+      - name: address_id
+        description: "ID of the address associated with this order"
+        tests:
+          - not_null
+      - name: created_at
+        description: "order creation date"
+        tests:
+          - not_null
+      - name: order_cost
+        description: "total order cost"
+        tests:
+          - not_null
+      - name: shipping_cost
+        description: "order shipping cost"
+      - name: tracking_id
+        description: "id for tracking"
+      - name: shipping_service
+        description: "shipping type"
+      - name: estimated_delivery_at
+        description: "estimated delivery date"
+      - name: delivered_at
+        description: "real delivered date"
+      - name: status
+        description: "order status"
+
+  - name: dim_products
+    description: "Dimension table for products"
+    columns:
+      - name: product_id
+        description: "ID of the product"
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "name of the product"
+      - name: price
+        description: "price of the product"
+      - name: inventory
+        description: "inventory of the product"
+
+  - name: dim_users
+    description: "Dimension table for users"
+    columns:
+      - name: user_id
+        description: "ID of the user"
+        tests:
+          - not_null
+          - unique
+      - name: first_name
+        description: "first name of the user"
+      - name: last_name
+        description: "last name of the user"
+      - name: email
+        description: "email of the user"
+      - name: phone_number
+        description: "phone number of the user"
+      - name: created_at
+        description: "date of user creation"
+      - name: updated_At
+        description: "date of last updated information"
+      - name: address_id
+        description: "ID of the user address"
